@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  news_id: MyString
+  url: MyString
+  publication: 2020-11-01 08:25:24
+  mission: MyString
+  abstract: MyString
+  credits: MyString
+  thumbnail: MyString
+  thumbnail_retina: MyString
+  thubmnail_1x: MyString
+  thumbnail_2x: MyString
+  keystone_image-1x: MyString
+  keystone_image-2x: MyString
+
+two:
+  name: MyString
+  news_id: MyString
+  url: MyString
+  publication: 2020-11-01 08:25:24
+  mission: MyString
+  abstract: MyString
+  credits: MyString
+  thumbnail: MyString
+  thumbnail_retina: MyString
+  thubmnail_1x: MyString
+  thumbnail_2x: MyString
+  keystone_image-1x: MyString
+  keystone_image-2x: MyString

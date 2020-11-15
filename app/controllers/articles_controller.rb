@@ -11,7 +11,6 @@ class ArticlesController < ApplicationController
     end
 
     def missions
-        puts(params[:mission_name])
         articles = Article.find_by_mission(params[:mission_name])
         render json: articles
     end

@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
 
-    def find_by_mission(mission)
+    def self.find_by_mission(mission)
+        puts(mission)
         return Article.where(mission: mission)
     end
     

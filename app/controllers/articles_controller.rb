@@ -14,4 +14,8 @@ class ArticlesController < ApplicationController
         articles = Article.find_by_mission(params[:mission_name])
         render json: articles
     end
+
+    def search
+        
+    end
 end

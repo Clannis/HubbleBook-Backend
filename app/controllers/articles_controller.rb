@@ -16,6 +16,6 @@ class ArticlesController < ApplicationController
     end
 
     def search
-        
+        byebug
     end
 end

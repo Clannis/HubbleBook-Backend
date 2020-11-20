@@ -16,6 +16,11 @@ class ArticlesController < ApplicationController
     end
 
     def search
-        byebug
+        articles = Article.search_for(params[:search])
+        if articles.empty?()
+            render json: {message: "No articles match your search critera"}
+        else
+            render json: articles
+        end
     end
 end

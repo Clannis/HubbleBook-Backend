@@ -6,9 +6,9 @@ class Article < ApplicationRecord
     end
 
     def self.search_for(query)
-        articles = []
-        articles.concat(Article.where("abstract like ?", "%" + query + "%"))
-        articles.concat(Article.where("name like ?", "%" + query + "%"))
+        articles = {}
+        articles[:content] = Article.where("abstract like ?", "%" + query + "%").sort_by { |key| key[:publication]}.reverse
+        articles[:title] = Article.where("name like ?", "%" + query + "%").sort_by { |key| key[:publication]}.reverse
         return articles
     end
     

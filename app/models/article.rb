@@ -7,8 +7,8 @@ class Article < ApplicationRecord
 
     def self.search_for(query)
         articles = {}
-        articles[:content] = Article.where("abstract like ?", "%" + query + "%").sort_by { |key| key[:publication]}.reverse
-        articles[:title] = Article.where("name like ?", "%" + query + "%").sort_by { |key| key[:publication]}.reverse
+        articles[:content] = Article.where("LOWER(abstract) like ?", "%" + query + "%").sort_by { |key| key[:publication]}.reverse
+        articles[:title] = Article.where("LOWER(name) like ?", "%" + query + "%").sort_by { |key| key[:publication]}.reverse
         return articles
     end
     

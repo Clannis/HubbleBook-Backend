@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     end
 
     def search
-        articles = Article.search_for(params[:search])
+        articles = Article.search_for(params[:search].downcase)
         if articles.empty?()
             render json: {message: "No articles match your search critera"}
         else

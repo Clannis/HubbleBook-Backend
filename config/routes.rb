@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :articles
 
   get '/missions/:mission_name', to: 'articles#missions'

@@ -16,7 +16,13 @@ class CommentsController < ApplicationController
     end
 
     def update
-        byebug
+        comment = Comment.find_by(id: params[:id])
+        if comment.user == session_user
+            comment.update(comment_params)
+            render json: comment
+        else
+            render json: {message: "You can only update your own comments."}
+        end
     end
 
     private

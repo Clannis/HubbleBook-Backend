@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
 
     def show
         article = Article.find_by(news_id: params[:id])
-        render json: article
+        comments = article.comments
+        render json: { article: article, comments: comments }
     end
 
     def missions

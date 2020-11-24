@@ -5,6 +5,11 @@ class CommentsController < ApplicationController
         render json: comment
     end
 
+    def index
+        comments = Article.find_by(news_id: params[:article_id]).comments
+        render json: comments
+    end
+
     private
 
     def comment_params

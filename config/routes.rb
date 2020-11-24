@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # resources :comments, only: [:create]
   post '/login', to: 'sessions#login'
   post '/autologin', to: 'sessions#autologin'
   resources :users

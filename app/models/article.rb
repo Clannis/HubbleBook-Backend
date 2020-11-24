@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+    has_many :comments
 
     def self.find_by_mission(mission)
         puts(mission)

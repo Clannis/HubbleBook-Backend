@@ -1,8 +1,13 @@
 class CommentsController < ApplicationController
 
     def create
-        comment = session_user.comments.create(comment_params)
-        render json: comment
+        comment = Article.find_by(news_id: params[:article_id]).comments.create(comment_params)
+        comment.user = session_user
+        if comment.save
+            render json: comment
+        else
+            render json: {message: "You can only post a comment if you are logged in."}
+        end
     end
 
     def index
@@ -13,7 +18,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.permit(:content, :article_id)
+        params.permit(:content)
     end
 
 end

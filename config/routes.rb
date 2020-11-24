@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :comments, only: [:create]
+  # resources :comments, only: [:create]
   post '/login', to: 'sessions#login'
   post '/autologin', to: 'sessions#autologin'
   resources :users
   resources :articles do
-    resources :comments, only: [:index]
+    resources :comments, only: [:index, :create]
   end
 
   get '/missions/:mission_name', to: 'articles#missions'

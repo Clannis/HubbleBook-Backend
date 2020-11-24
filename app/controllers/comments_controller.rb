@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.permit(:content)
+        params.permit(:content, :article_id)
     end
 
 end

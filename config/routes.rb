@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :comments
   post '/login', to: 'sessions#login'
   post '/autologin', to: 'sessions#autologin'
   resources :users

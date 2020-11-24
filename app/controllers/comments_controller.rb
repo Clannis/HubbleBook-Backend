@@ -15,6 +15,10 @@ class CommentsController < ApplicationController
         render json: comments
     end
 
+    def update
+        byebug
+    end
+
     private
 
     def comment_params

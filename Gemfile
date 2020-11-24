@@ -44,3 +44,5 @@ gem "httparty", "~> 0.18.1"
 gem "dotenv-rails", "~> 2.7"
 
 gem "active_model_serializers", "~> 0.10.10"
+
+gem "jwt", "~> 2.2"

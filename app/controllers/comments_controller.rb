@@ -25,6 +25,17 @@ class CommentsController < ApplicationController
         end
     end
 
+    def destroy
+        comment = Comment.find_by(id: params[:id])
+        id = comment.id
+        if comment.user = session_user
+            comment.delete()
+            render json: {comment: id, message: "Delete succesful"}
+        else
+            render json: {message: "You can only delete your own comments."}
+        end
+    end
+
     private
 
     def comment_params

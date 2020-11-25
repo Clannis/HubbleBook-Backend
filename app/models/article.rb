@@ -13,7 +13,9 @@ class Article < ApplicationRecord
         articles[:comment] = []
         comments = Comment.where("LOWER(content) like ?", "%" + query + "%")
         comments.each do |comment|
-            articles[:comment].push(comment.article)
+            if !articles[:comment].include?(comment.article)
+                articles[:comment].push(comment.article)
+            end
         end
         return articles
     end

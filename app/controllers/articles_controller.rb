@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
     end
 
     def missions
-        articles = Article.find_by_mission(params[:mission_name])
+        articles = Article.find_by_mission(params[:mission_name]).sort_by { |key| key[:publication]}.reverse
         render json: articles
     end
 

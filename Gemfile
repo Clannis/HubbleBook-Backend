@@ -46,3 +46,5 @@ gem "dotenv-rails", "~> 2.7"
 gem "active_model_serializers", "~> 0.10.10"
 
 gem "jwt", "~> 2.2"
+
+gem "rails_same_site_cookie", "~> 0.1.8"
